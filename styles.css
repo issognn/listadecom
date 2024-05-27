@@ -1,0 +1,329 @@
+/*
+=============== 
+Fonts
+===============
+*/
+/* Importa las fuentes "Open Sans" y "Roboto" desde Google Fonts */
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700&display=swap");
+
+/*
+=============== 
+Variables
+===============
+*/
+
+:root {
+  /* dark shades of primary color*/
+  --clr-primary-1: hsl(205, 86%, 17%); /* Color primario oscuro 1 */
+  --clr-primary-2: hsl(205, 77%, 27%); /* Color primario oscuro 2 */
+  --clr-primary-3: hsl(205, 72%, 37%); /* Color primario oscuro 3 */
+  --clr-primary-4: hsl(205, 63%, 48%); /* Color primario oscuro 4 */
+  /* primary/main color */
+  --clr-primary-5: #49a6e9; /* Color primario principal */
+  /* lighter shades of primary color */
+  --clr-primary-6: hsl(205, 89%, 70%); /* Color primario claro 1 */
+  --clr-primary-7: hsl(205, 90%, 76%); /* Color primario claro 2 */
+  --clr-primary-8: hsl(205, 86%, 81%); /* Color primario claro 3 */
+  --clr-primary-9: hsl(205, 90%, 88%); /* Color primario claro 4 */
+  --clr-primary-10: hsl(205, 100%, 96%); /* Color primario claro 5 */
+  /* darkest grey - used for headings */
+  --clr-grey-1: hsl(209, 61%, 16%); /* Gris más oscuro, usado para encabezados */
+  --clr-grey-2: hsl(211, 39%, 23%); /* Gris oscuro 2 */
+  --clr-grey-3: hsl(209, 34%, 30%); /* Gris oscuro 3 */
+  --clr-grey-4: hsl(209, 28%, 39%); /* Gris oscuro 4 */
+  /* grey used for paragraphs */
+  --clr-grey-5: hsl(210, 22%, 49%); /* Gris usado para párrafos */
+  --clr-grey-6: hsl(209, 23%, 60%); /* Gris claro 1 */
+  --clr-grey-7: hsl(211, 27%, 70%); /* Gris claro 2 */
+  --clr-grey-8: hsl(210, 31%, 80%); /* Gris claro 3 */
+  --clr-grey-9: hsl(212, 33%, 89%); /* Gris claro 4 */
+  --clr-grey-10: hsl(210, 36%, 96%); /* Gris más claro */
+  --clr-white: #fff; /* Blanco */
+  --clr-red-dark: hsl(360, 67%, 44%); /* Rojo oscuro */
+  --clr-red-light: hsl(360, 71%, 66%); /* Rojo claro */
+  --clr-green-dark: hsl(125, 67%, 44%); /* Verde oscuro */
+  --clr-green-light: hsl(125, 71%, 66%); /* Verde claro */
+  --clr-black: #222; /* Negro */
+  --ff-primary: "Roboto", sans-serif; /* Fuente primaria */
+  --ff-secondary: "Open Sans", sans-serif; /* Fuente secundaria */
+  --transition: all 0.3s linear; /* Transición global */
+  --spacing: 0.25rem; /* Espaciado */
+  --radius: 0.5rem; /* Radio de borde */
+  --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+  --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Sombra oscura */
+  --max-width: 1170px; /* Ancho máximo */
+  --fixed-width: 620px; /* Ancho fijo */
+}
+/*
+=============== 
+Global Styles
+===============
+*/
+
+*,
+::after,
+::before {
+  margin: 0; /* Quita margen */
+  padding: 0; /* Quita padding */
+  box-sizing: border-box; /* Usa el modelo de caja border-box */
+}
+body {
+  font-family: var(--ff-secondary); /* Fuente secundaria */
+  background: var(--clr-grey-10); /* Fondo gris claro */
+  color: var(--clr-grey-1); /* Texto gris oscuro */
+  line-height: 1.5; /* Altura de línea */
+  font-size: 0.875rem; /* Tamaño de fuente */
+}
+ul {
+  list-style-type: none; /* Sin estilo de lista */
+}
+a {
+  text-decoration: none; /* Sin subrayado en enlaces */
+}
+img:not(.logo) {
+  width: 100%; /* Imágenes no logotipos ocupan el 100% de ancho */
+}
+img {
+  display: block; /* Mostrar imágenes como bloques */
+}
+
+h1,
+h2,
+h3,
+h4 {
+  letter-spacing: var(--spacing); /* Espaciado entre letras */
+  text-transform: capitalize; /* Capitaliza el texto */
+  line-height: 1.25; /* Altura de línea */
+  margin-bottom: 0.75rem; /* Margen inferior */
+  font-family: var(--ff-primary); /* Fuente primaria */
+}
+h1 {
+  font-size: 3rem; /* Tamaño de fuente para h1 */
+}
+h2 {
+  font-size: 2rem; /* Tamaño de fuente para h2 */
+}
+h3 {
+  font-size: 1.25rem; /* Tamaño de fuente para h3 */
+}
+h4 {
+  font-size: 0.875rem; /* Tamaño de fuente para h4 */
+}
+p {
+  margin-bottom: 1.25rem; /* Margen inferior */
+  color: var(--clr-grey-5); /* Color de párrafos */
+}
+@media screen and (min-width: 800px) {
+  h1 {
+    font-size: 4rem; /* Tamaño de fuente para h1 en pantallas grandes */
+  }
+  h2 {
+    font-size: 2.5rem; /* Tamaño de fuente para h2 en pantallas grandes */
+  }
+  h3 {
+    font-size: 1.75rem; /* Tamaño de fuente para h3 en pantallas grandes */
+  }
+  h4 {
+    font-size: 1rem; /* Tamaño de fuente para h4 en pantallas grandes */
+  }
+  body {
+    font-size: 1rem; /* Tamaño de fuente en pantallas grandes */
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    line-height: 1; /* Altura de línea en pantallas grandes */
+  }
+}
+/*  global classes */
+
+.btn {
+  text-transform: uppercase; /* Texto en mayúsculas */
+  background: transparent; /* Fondo transparente */
+  color: var(--clr-black); /* Color del texto */
+  padding: 0.375rem 0.75rem; /* Padding */
+  letter-spacing: var(--spacing); /* Espaciado entre letras */
+  display: inline-block; /* Mostrar como bloque en línea */
+  transition: var(--transition); /* Transición global */
+  font-size: 0.875rem; /* Tamaño de fuente */
+  border: 2px solid var(--clr-black); /* Borde */
+  cursor: pointer; /* Cursor de puntero */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2); /* Sombra */
+  border-radius: var(--radius); /* Radio del borde */
+}
+.btn:hover {
+  color: var(--clr-white); /* Color del texto al pasar el cursor */
+  background: var(--clr-black); /* Fondo al pasar el cursor */
+}
+/* section */
+.section {
+  padding: 5rem 0; /* Padding para secciones */
+}
+
+.section-center {
+  width: 90vw; /* Ancho del 90% de la ventana */
+  margin: 0 auto; /* Margen automático */
+  max-width: 35rem; /* Ancho máximo */
+  margin-top: 8rem; /* Margen superior */
+}
+@media screen and (min-width: 992px) {
+  .section-center {
+    width: 95vw; /* Ancho del 95% de la ventana en pantallas grandes */
+  }
+}
+main {
+  min-height: 100vh; /* Altura mínima del 100% de la ventana */
+  display: grid; /* Mostrar como grid */
+  place-items: center; /* Centrar elementos */
+}
+/*
+=============== 
+Grocery List
+===============
+*/
+.section-center {
+  background: var(--clr-white); /* Fondo blanco */
+  border-radius: var(--radius); /* Radio del borde */
+  box-shadow: var(--light-shadow); /* Sombra ligera */
+  transition: var(--transition); /* Transición global */
+  padding: 2rem; /* Padding */
+}
+.section-center:hover {
+  box-shadow: var(--dark-shadow); /* Sombra oscura al pasar el cursor */
+}
+.alert {
+  margin-bottom: 1rem; /* Margen inferior */
+  height: 1.25rem; /* Altura */
+  display: grid; /* Mostrar como grid */
+  align-items: center; /* Alinear elementos al centro */
+  text-align: center; /* Texto centrado */
+  font-size: 0.7rem; /* Tamaño de fuente */
+  border-radius: 0.25rem; /* Radio del borde */
+  letter-spacing: var(--spacing); /* Espaciado entre letras */
+  text-transform: capitalize; /* Capitaliza el texto */
+}
+.alert-danger {
+  color: #721c24; /* Color del texto para alertas de peligro */
+  background: #f8d7da; /* Fondo para alertas de peligro */
+}
+.alert-success {
+  color: #155724; /* Color del texto para alertas de éxito */
+  background: #d4edda; /* Fondo para alertas de éxito */
+}
+.grocery-form h3 {
+  color: var(--clr-primary-1); /* Color del encabezado */
+  margin-bottom: 1.5rem; /* Margen inferior */
+  text-align: center; /* Texto centrado */
+}
+.form-control {
+  display: flex; /* Mostrar como flexbox */
+  justify-content: center; /* Centrar contenido */
+}
+#grocery {
+  padding: 0.25rem; /* Padding */
+  padding-left: 1rem; /* Padding izquierdo */
+  background: var(--clr-grey-10); /* Fondo gris claro */
+  border-top-left-radius: var(--radius); /* Radio del borde superior izquierdo */
+  border-bottom-left-radius: var(--radius); /* Radio del borde inferior izquierdo */
+  border-color: transparent; /* Borde transparente */
+  font-size: 1rem; /* Tamaño de fuente */
+  flex: 1 0 auto; /* Flexibilidad del elemento */
+  color: var(--clr-grey-5); /* Color del texto */
+}
+#grocery::placeholder {
+  font-family: var(--ff-secondary); /* Fuente del placeholder */
+  color: var(--clr-grey-5); /* Color del placeholder */
+}
+.submit-btn {
+  background: var(--clr-primary-8); /* Fondo del botón */
+  border-color: transparent; /* Borde transparente */
+  flex: 0 0 5rem; /* Tamaño fijo del botón */
+  display: grid; /* Mostrar como grid */
+  align-items: center; /* Alinear al centro */
+  padding: 0.25rem; /* Padding */
+  text-transform: capitalize; /* Capitaliza el texto */
+  letter-spacing: 2px; /* Espaciado entre letras */
+  border-top-right-radius: var(--radius); /* Radio del borde superior derecho */
+  border-bottom-right-radius: var(--radius); /* Radio del borde inferior derecho */
+  cursor: pointer; /* Cursor de puntero */
+  content: var(--clr-primary-5); /* Color de contenido */
+  transition: var(--transition); /* Transición global */
+  font-size: 0.85rem; /* Tamaño de fuente */
+}
+.submit-btn:hover {
+  background: var(--clr-primary-5); /* Fondo al pasar el cursor */
+  color: var(--clr-white); /* Color del texto al pasar el cursor */
+}
+
+.grocery-container {
+  margin-top: 2rem; /* Margen superior */
+  transition: var(--transition); /* Transición global */
+  visibility: hidden; /* Visibilidad oculta */
+}
+.show-container {
+  visibility: visible; /* Visibilidad visible */
+}
+.grocery-item {
+  display: flex; /* Mostrar como flexbox */
+  align-items: center; /* Alinear al centro */
+  justify-content: space-between; /* Justificar contenido entre extremos */
+  margin-bottom: 0.5rem; /* Margen inferior */
+  transition: var(--transition); /* Transición global */
+  padding: 0.25rem 1rem; /* Padding */
+  border-radius: var(--radius); /* Radio del borde */
+  text-transform: capitalize; /* Capitaliza el texto */
+}
+.grocery-item:hover {
+  color: var(--clr-grey-5); /* Color del texto al pasar el cursor */
+  background: var(--clr-grey-10); /* Fondo al pasar el cursor */
+}
+.grocery-item:hover .title {
+  color: var(--clr-grey-5); /* Color del título al pasar el cursor */
+}
+.title {
+  margin-bottom: 0; /* Sin margen inferior */
+  color: var(--clr-grey-1); /* Color del título */
+  letter-spacing: 2px; /* Espaciado entre letras */
+  transition: var(--transition); /* Transición global */
+}
+.edit-btn,
+.delete-btn {
+  background: transparent; /* Fondo transparente */
+  border-color: transparent; /* Borde transparente */
+  cursor: pointer; /* Cursor de puntero */
+  font-size: 0.7rem; /* Tamaño de fuente */
+  margin: 0 0.15rem; /* Margen */
+  transition: var(--transition); /* Transición global */
+}
+.edit-btn {
+  color: var(--clr-green-light); /* Color del botón de editar */
+}
+.edit-btn:hover {
+  color: var(--clr-green-dark); /* Color al pasar el cursor */
+}
+.delete-btn {
+  color: var(--clr-red-light); /* Color del botón de eliminar */
+}
+.delete-btn:hover {
+  color: var(--clr-red-dark); /* Color al pasar el cursor */
+}
+.clear-btn {
+  text-transform: capitalize; /* Capitaliza el texto */
+  width: 10rem; /* Ancho */
+  height: 1.5rem; /* Altura */
+  display: grid; /* Mostrar como grid */
+  align-items: center; /* Alinear al centro */
+  background: transparent; /* Fondo transparente */
+  border-color: transparent; /* Borde transparente */
+  color: var(--clr-red-light); /* Color del botón de limpiar */
+  margin: 0 auto; /* Margen automático */
+  font-size: 0.85rem; /* Tamaño de fuente */
+  letter-spacing: var(--spacing); /* Espaciado entre letras */
+  cursor: pointer; /* Cursor de puntero */
+  transition: var(--transition); /* Transición global */
+  margin-top: 1.25rem; /* Margen superior */
+}
+.clear-btn:hover {
+  color: var(--clr-red-dark); /* Color al pasar el cursor */
+}
